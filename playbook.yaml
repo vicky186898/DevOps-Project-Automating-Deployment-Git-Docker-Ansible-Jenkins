@@ -1,0 +1,15 @@
+
+---
+- name: Installations on Machine1
+  hosts: localhost
+  become: true
+  tasks:
+  - name: Installing Jenkins, Java, and Docker
+    script: master.sh
+
+- name: Installations on Slave2
+  hosts: slave
+  become: true
+  tasks:
+  - name: Installing Java, and Docker
+    script: slave.sh
